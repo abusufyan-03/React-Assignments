@@ -24,7 +24,6 @@ root.render(heading) */
         React.createElement('h3', {key: 'h3'}, "Heading 3")
     ]
 ) */
-const root = ReactDOM.createRoot(document.getElementById('root'));
 // root.render(title)
 
 /* 
@@ -53,26 +52,52 @@ root.render(titlewithJSX)
 }
 root.render(<TitleWithFunctionalComponent/>) */
 
-const Title = () => {
+/* const Title = () => {
     return (
         <React.Fragment>
             <p>This is Title</p>
         </React.Fragment>
     )
-}
-const Heading = (props) => {
-    const {title} = props
+} */
+// const Heading = (props) => {
+//     const {title} = props
+//     return (
+//         <React.Fragment>
+//             <h2>{title}</h2>
+//             <Title/>
+//             {Title()}
+//             <Title></Title>
+//             {/* {Title} */} {/* will give error */}
+//         </React.Fragment>
+//     )
+
+//     /* <Title/> --> run title() --> return JSX --> render it */
+// }
+
+// root.render(<Heading title="Heading from props" />)
+
+/* Part 2 */
+// import icon from './icon.png';
+const icon = new URL('./icon.png', import.meta.url);
+const profile = new URL('./profile.png', import.meta.url);
+import './header.css'
+// import profile from './profile.png';
+console.log(icon)
+console.log(profile)
+const Header = () => {
     return (
-        <React.Fragment>
-            <h2>{title}</h2>
-            <Title/>
-            {Title()}
-            <Title></Title>
-            {/* {Title} */} {/* will give error */}
-        </React.Fragment>
+            <div className='container'>
+                <div className='logo-container'>
+                    <img className='logo' src={icon}/>
+                </div>
+                <div>
+                    <input type='search' placeholder='search...'/>
+                </div>
+                <div className='user-icon-container'>
+                    <img className='user-icon' src={profile}/>
+                </div>
+            </div>
     )
-
-    /* <Title/> --> run title() --> return JSX --> render it */
 }
-
-root.render(<Heading title="Heading from props" />)
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<Header/>)
