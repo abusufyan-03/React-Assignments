@@ -2109,17 +2109,26 @@ const Header = () => {
 
 const RestaurantCard = (props) => {
     const {resData} = props;
+    const {name, cuisines, avgRating, costForTwoString, slaString, cloudinaryImageId} = resData?.data;
+    const CDN_URL = 'https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/';
     return (
         <div className="res-card">
             <div className="media">
-                <img className="res-img" src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/v1693357212/e683cfeb39647871ccdc4978222ccc1f.jpg" />
+                <img className="res-img" src={CDN_URL + cloudinaryImageId} />
             </div>
             <div className="res-info">
-                <h2 className="res-name">{resData.data.name}</h2>
+                {/* <h2 className="res-name">{resData.data.name}</h2>
                 <p className="cuisine">{resData.data.cuisines.join(', ')}</p>
                 <p className="res-rating">{resData.data.avgRating} star</p>
                 <p className="res-price">{resData.data.costForTwoString}</p>
-                <p className="deliveryTime">{resData.data.slaString}</p>
+                <p className="deliveryTime">{resData.data.slaString}</p> */}
+
+                {/* Destructuting */}
+                <h2 className="res-name">{name}</h2>
+                <p className="cuisine">{cuisines.join(', ')}</p>
+                <p className="res-rating">{avgRating} star</p>
+                <p className="res-price">{costForTwoString}</p>
+                <p className="deliveryTime">{slaString}</p>
             </div>
         </div>
     )
@@ -2134,14 +2143,19 @@ const Body = () => {
                     <button className="search-btn">Search</button>
                 </div>
                 <div className="Restaurant-container">
-                    <RestaurantCard resData={resList[0]} />
+
+                    {/* Static rendering */}
+                    {/* <RestaurantCard resData={resList[0]} />
                     <RestaurantCard resData={resList[1]}/>
                     <RestaurantCard resData={resList[2]}/>
                     <RestaurantCard resData={resList[3]}/>
                     <RestaurantCard resData={resList[4]}/>
                     <RestaurantCard resData={resList[5]}/>
                     <RestaurantCard resData={resList[6]}/>
-                    <RestaurantCard resData={resList[7]}/>
+                    <RestaurantCard resData={resList[7]}/> */}
+
+                    {/* Dynamic rendering */}
+                    {resList.map((restaurant)=><RestaurantCard key={restaurant.data.id} resData={restaurant}/>)}
 
                 </div>
             </section>
