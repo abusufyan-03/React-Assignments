@@ -1,0 +1,27 @@
+@media (min-width: 768px){
+
+}
+
+@media (min-width: 1024px) {
+    .header {
+        padding: 0 3.2rem;
+    }
+    .menu-toggle {
+        display: none;
+    }
+    .nav-container {
+        display: block;
+    }
+    .nav-buttons {
+        display: flex;
+        gap: 1.2rem;
+    }
+    .nav-items {
+        display: flex;
+        gap: 1.6rem;
+    }
+    .nav-items li:hover {
+        color: #ff6b00;
+        cursor: pointer;
+    }
+}

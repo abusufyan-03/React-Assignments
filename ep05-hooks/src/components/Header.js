@@ -1,7 +1,8 @@
 import React from "react"
 import ReactDOM from 'react-dom/client';
 import { useState } from "react";
-import '../style.css'
+import '../style.css';
+import '../responsiveness.css';
 const logo = new URL("../assets/logo.png", import.meta.url);
 const Header = () => {
     const [openMenu, setMenuOpen] = useState(false);
@@ -10,7 +11,7 @@ const Header = () => {
             <div className="logo-container">
                 <img id="logo" src={logo} />
             </div>
-            {/* <div className="nav-container">
+            <div className="nav-container">
                 <ul className="nav-items">
                     <li>Home</li>
                     <li>About US</li>
@@ -21,7 +22,7 @@ const Header = () => {
             <div className="nav-buttons">
                 <button className="login-btn">Login</button>
                 <button className="signin-btn">Signin</button>
-            </div> */}
+            </div>
 
             <button className="menu-toggle" onClick={()=> setMenuOpen(true)}>☰</button>
             {openMenu && (<div className={`overlay ${openMenu ? 'active' : ""}`} onClick={()=>setMenuOpen(false)}></div>)}
