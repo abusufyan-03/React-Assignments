@@ -150,3 +150,53 @@ body {
 .nav-buttons {
     display: none;
 }
+
+/* Styling main */
+.main {
+    margin: 2.4rem 1.6rem;
+}
+
+.search-bar {
+    padding: .8rem;
+    border-radius: .8rem;
+    margin-right: .8rem;
+}
+.search-btn {
+    padding: .8rem;
+    border-radius: .8rem;
+}
+
+.res-card {
+    width: 100%;
+    border-radius: 1rem;
+    margin-top: 1.6rem;
+    background-color: #FAF9F6;
+    border: 1px solid #d4d4d4;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, .5);
+}
+
+.res-card img {
+  border-top-left-radius: .8rem;
+  border-top-left-radius: .8rem;
+  height: 16rem;
+  margin-bottom: 1.2rem;
+}
+
+.res-info {
+  padding: 0 1.6rem;
+  font-size: 1.4rem;
+}
+
+.res-name {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: .6rem;
+}
+
+.res-cuisine {
+  margin-bottom: 1.2rem;
+}
+
+.deliveryTime {
+  margin-bottom: 1.6rem;
+}
