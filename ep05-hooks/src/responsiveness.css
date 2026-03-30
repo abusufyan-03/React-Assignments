@@ -1,10 +1,36 @@
 @media (min-width: 768px){
-
+    .header{
+        padding: 0 2.4rem;
+        margin-bottom: 2.4rem;
+    }
+    .main {
+        padding: 0 2.4rem;
+    }
+    .search-container{
+        margin-bottom: 2.4rem;
+    }
+    .restaurant-container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2.4rem;
+    }
 }
 
 @media (min-width: 1024px) {
     .header {
         padding: 0 3.2rem;
+        margin-bottom: 3.2rem;
+    }
+    .main {
+        padding: 0 3.2rem;
+    }
+    .search-container {
+        margin-bottom: 3.2rem;
+    }
+    .restaurant-container{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 3.2rem;
     }
     .menu-toggle {
         display: none;
@@ -18,10 +44,16 @@
     }
     .nav-items {
         display: flex;
-        gap: 1.6rem;
+        gap: 3.2rem;
     }
     .nav-items li:hover {
         color: #ff6b00;
         cursor: pointer;
+    }
+}
+
+@media (width >= 1280) {
+    .restaurant-container{
+        grid-template-columns: repeat(4, 1fr);
     }
 }

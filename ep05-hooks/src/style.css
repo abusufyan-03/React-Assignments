@@ -43,6 +43,7 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 0 1.6rem;
+    margin-bottom: 1.6rem;
 }
 
 #logo {
@@ -60,8 +61,8 @@ body {
     position: fixed;
     top: 1rem;
     right: 1rem;
-    width:256px;
-    height:353px;
+    width:25.6rem;
+    /* height:33.3rem; */
     background-color: rgb(255, 255, 255);
     display: none;
     z-index: 10;
@@ -76,7 +77,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 2.4rem;
+    margin-bottom: 1.6rem;
     border-bottom:1px solid #eee;
     padding: 1.6rem;
 }
@@ -93,7 +94,7 @@ body {
 }
 
 .menu-nav ul{
-  padding:8px 16px;
+  padding:0px 16px;
 }
 
 .menu-nav li{
@@ -115,7 +116,7 @@ body {
     display: flex;
     justify-content: space-between;
     border-top: 1px solid #eee;
-    padding: 1.6rem;
+    padding: 2rem;
 }
 
 .login-btn {
@@ -153,33 +154,51 @@ body {
 
 /* Styling main */
 .main {
-    margin: 2.4rem 1.6rem;
+    padding: 0 1.6rem;
+}
+
+.search-container{
+  margin-bottom: 1.6rem;
 }
 
 .search-bar {
     padding: .8rem;
     border-radius: .8rem;
     margin-right: .8rem;
+    border: 2px solid #d4d4d4;
 }
 .search-btn {
     padding: .8rem;
     border-radius: .8rem;
+    border: 2px solid #d4d4d4;
+    background-color: #ff6b00;
+    border: 1px solid #cc5500;
+    color: white;
+    cursor: pointer;
+    font-weight: 600;
 }
 
+.restaurant-container{
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 1.6rem;
+}
+
+
 .res-card {
-    width: 100%;
-    border-radius: 1rem;
-    margin-top: 1.6rem;
     background-color: #FAF9F6;
     border: 1px solid #d4d4d4;
     box-shadow: 0 4px 12px rgba(0, 0, 0, .5);
+    border-radius: 1rem;
 }
 
 .res-card img {
+  width: 100%;
   border-top-left-radius: .8rem;
-  border-top-left-radius: .8rem;
+  border-top-right-radius: .8rem;
   height: 16rem;
-  margin-bottom: 1.2rem;
+  margin-bottom: 1.6rem;
+  object-fit: cover;
 }
 
 .res-info {
@@ -190,11 +209,11 @@ body {
 .res-name {
   font-size: 1.8rem;
   font-weight: 700;
-  margin-bottom: .6rem;
+  margin-bottom: .4rem;
 }
 
-.res-cuisine {
-  margin-bottom: 1.2rem;
+.cuisine {
+  margin-bottom: .8rem;
 }
 
 .deliveryTime {
