@@ -178,6 +178,17 @@ body {
     font-weight: 600;
 }
 
+.filter-btn{
+    padding: .8rem;
+    border-radius: .8rem;
+    border: 2px solid #d4d4d4;
+    background-color: #ff6b00;
+    border: 1px solid #cc5500;
+    color: white;
+    cursor: pointer;
+    font-weight: 600;
+    margin-top: .8rem;
+}
 .restaurant-container{
     display: grid;
     grid-template-columns: repeat(1, 1fr);

@@ -9,6 +9,9 @@
     .search-container{
         margin-bottom: 2.4rem;
     }
+    .filter-btn{
+        margin-left: .8rem;
+    }
     .restaurant-container {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
