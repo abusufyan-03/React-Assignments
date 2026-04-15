@@ -33,3 +33,100 @@ body {
   line-height: 1.5;
   font-size: 1.6rem;
 }
+
+/* Styling Header */
+.header{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 6.4rem;
+  border: 1px solid #d4d4d4;
+  padding: 0 1.6rem;
+}
+
+#logo {
+  width: 6rem;
+}
+
+.mobile-menu {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  width: 25.6rem;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, .5);
+  border-radius: .8rem;
+  z-index: 10;
+  display: none;
+}
+
+.mobile-menu.active{
+  display: block;
+}
+
+.overlay{
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, .5);
+  backdrop-filter: blur(4px);
+}
+
+.menu-header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.6rem;
+  margin-bottom: 1.6rem;
+  border-bottom: 1px solid #d4d4d4;
+}
+
+.menu-header h2{
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+
+.menu-nav ul {
+  padding: 0 1.6rem;
+}
+
+.menu-nav a {
+  display: block;
+  padding: .8rem 0;
+  color: #4b5563;
+}
+
+.menu-nav a:hover{
+  color:#111827;
+}
+
+.menu-footer{
+  border-top: 1px solid #d4d4d4;
+  padding: 1.6rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.btn {
+  padding: .8rem 2.5rem;
+  border-radius: .8rem;
+}
+
+.login-btn {
+  background-color: #ff6b00;
+  color: white;
+  border: 1px solid #cc5500;
+  font-weight: 600;
+}
+
+.signin-btn {
+  background-color: transparent;
+  color: #ff6b00;
+  border: 1px solid #cc5500;
+}
+
+.nav-container{
+  display: none;
+}
+.nav-buttons{
+  display: none;
+}

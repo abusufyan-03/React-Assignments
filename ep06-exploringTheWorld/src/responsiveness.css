@@ -1,0 +1,28 @@
+@media(min-width: 768px){
+
+}
+
+@media (min-width: 1024px) {
+    .header{
+        display: flex;
+        padding: 0 3.2rem;
+    }
+    .toggle-menu{
+        display: none;
+    }
+    .nav-container{
+        display: block;
+    }
+    .nav-items{
+        display: flex;
+        gap: 3.2rem;
+    }
+    .nav-buttons{
+        display: flex;
+        gap: .8rem;
+    }
+}
+
+@media (width >= 1280) {
+    
+}
