@@ -1,5 +1,19 @@
 @media(min-width: 768px){
+    .header{
+        padding: 0 2.4rem;
+    }
+    .main{
+        padding: 0 2.4rem;
+    }
 
+    .search-container{
+        margin: 2.4rem 0;
+    }
+    .restaurant-container{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2.4rem;
+    }
 }
 
 @media (min-width: 1024px) {
@@ -21,8 +35,28 @@
         display: flex;
         gap: .8rem;
     }
+     .nav-items li:hover {
+        color: #ff6b00;
+        cursor: pointer;
+    }
+    
+    .main{
+        padding: 0 3.2rem;
+    }
+
+    .search-container{
+        margin: 3.2rem 0;
+    }
+
+    .restaurant-container{
+        grid-template-columns: repeat(3, 1fr);
+        gap: 3.2rem;
+    }
 }
 
 @media (width >= 1280) {
-    
+    .restaurant-container{
+        grid-template-columns: repeat(4, 1fr);
+        gap: 3.2rem;
+    }
 }
