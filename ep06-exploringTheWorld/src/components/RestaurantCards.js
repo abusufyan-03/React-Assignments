@@ -2,9 +2,8 @@ import "../style.css"
 import {CDN_URL}  from "../utils/constant.js"
 const RestaurantCards = (props) => {
     const {resData} = props;
-    console.log(resData);
-    console.log(resData.data.name);
-    const {cloudinaryImageId, name, cuisines, avgRating, costForTwoString, deliveryTime} = resData?.data;
+    const {cloudinaryImageId, name, cuisines, avgRating, costForTwo} = resData?.info;
+    const {deliveryTime} = resData?.info.sla
     return (
         <div className="res-card">
             <div className="res-media">
@@ -15,7 +14,7 @@ const RestaurantCards = (props) => {
                 <p className="res-name">{name}</p>
                 <p className="res-cuisine">{cuisines.join(', ')}</p>
                 <p className="res-rating">{avgRating}</p>
-                <p className="res-price">{costForTwoString}</p>
+                <p className="res-price">{costForTwo}</p>
                 <p className="res-deliveryTime">{deliveryTime} Min</p>
             </div>
         </div>
