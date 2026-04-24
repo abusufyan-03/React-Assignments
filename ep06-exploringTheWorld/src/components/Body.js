@@ -1,6 +1,7 @@
 import resList from "../utils/resList";
 import RestaurantCards from "./RestaurantCards";
 import { useState, useEffect } from "react";
+import Shimmer from "./Shimmer";
 const Body = () => {
     const [restaurantList, setRestaurantList] = useState([])
 
@@ -19,8 +20,14 @@ const fetchData = async ()=> {
     console.log(json?.data?.cards[1].card.card.gridElements.infoWithStyle.restaurants)
 }
 
+
+// if(restaurantList.length == 0){
+//     return(
+//         <Shimmer/>
+//     )
+// }
 // console.log("Body called")
-    return(
+    return restaurantList.length==0? <Shimmer/>: (
         <main className="main">
             <section>
                 <div className="search-container">
