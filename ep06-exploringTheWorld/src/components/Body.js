@@ -10,16 +10,7 @@ const Body = () => {
                     <button className="filter-btn btn">Top Rated Restaurant</button>
                 </div>
                 <div className="restaurant-container">
-                    <RestaurantCards resData={resList[0]}/>
-                    <RestaurantCards resData={resList[1]}/>
-                    <RestaurantCards resData={resList[2]}/>
-                    <RestaurantCards resData={resList[3]}/>
-                    <RestaurantCards resData={resList[4]}/>
-                    <RestaurantCards resData={resList[5]}/>
-                    <RestaurantCards resData={resList[6]}/>
-                    <RestaurantCards resData={resList[7]}/>
-                    <RestaurantCards resData={resList[8]}/>
-                    <RestaurantCards resData={resList[9]}/>
+                    {resList.map((restaurant, index)=><RestaurantCards key={restaurant.data.id} resData={restaurant}/>)}
                 </div>
             </section>
         </main>
