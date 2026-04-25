@@ -6,6 +6,8 @@ import '../style.css';
 import '../responsiveness.css'
 const Header = () => {
     const [openMenu, setOpenMenu] = useState(false)
+    const [login, setLogin] = useState('login');
+    console.log("Header componenent rendered!!")
     return(
         <header className="header">
             <div className="logo-container">
@@ -50,8 +52,12 @@ const Header = () => {
                 </ul>
             </div>
             <div className='nav-buttons'>
-                <button className='login-btn btn'>Login</button>
-                <button className='signin-btn btn'>Signin</button>
+                <button className='login-btn btn'
+                onClick={()=>{
+                    login === 'login'? setLogin('logout'): setLogin('login')
+                }}
+                >{login}</button>
+                {/* <button className='signin-btn btn'>Signin</button> */}
             </div>
         </header>
     )
