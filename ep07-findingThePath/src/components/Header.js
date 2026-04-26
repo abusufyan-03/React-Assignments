@@ -4,6 +4,7 @@ const logo = new URL('../assets/logo.png', import.meta.url);
 import { useState } from 'react';
 import '../style.css';
 import '../responsiveness.css'
+import { Link } from 'react-router';
 const Header = () => {
     const [openMenu, setOpenMenu] = useState(false)
     const [login, setLogin] = useState('login');
@@ -45,9 +46,9 @@ const Header = () => {
 
             <div className='nav-container'>
                 <ul className='nav-items'>
-                    <li>Home</li>
-                    <li>About US</li>
-                    <li>Contact US</li>
+                    <li><Link to='/'>Home</Link></li>
+                    <li><Link to='/About'>About US</Link></li>
+                    <li><Link to='/Contact'>Contact</Link></li>
                     <li>Cart</li>
                 </ul>
             </div>
