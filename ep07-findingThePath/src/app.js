@@ -4,6 +4,7 @@ import Body from './components/Body.js';
 import { createBrowserRouter, RouterProvider, Outlet} from 'react-router';
 import About from './components/About.js'
 import Contact from './components/Contact.js';
+import Error from './components/Error.js';
 
 
 const AppLayout = () => {
@@ -33,6 +34,7 @@ const appRouter = createBrowserRouter([
                 element: <Contact/>
             }
         ],
+        errorElement: <Error/>
     }
 ])
 const root = ReactDOM.createRoot(document.getElementById('root'));
