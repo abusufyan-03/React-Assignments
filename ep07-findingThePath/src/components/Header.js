@@ -24,16 +24,16 @@ const Header = () => {
                 </div>
                 <nav className='menu-nav'>
                         <ul>
-                            <a href="">
+                            <Link to="/">
                                 <li>Home</li>
-                            </a>
-                            <a href="">
+                            </Link>
+                            <Link to="/About">
                                 <li>About</li>
-                            </a>
-                            <a href="">
+                            </Link>
+                            <Link to="/contact">
                                 <li>Contact</li>
-                            </a>
-                            <a href="">
+                            </Link>
+                            <a to="/">
                                 <li>Cart</li>
                             </a>
                         </ul>
