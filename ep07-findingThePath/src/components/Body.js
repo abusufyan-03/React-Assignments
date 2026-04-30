@@ -2,8 +2,10 @@ import resList from "../utils/resList";
 import RestaurantCards from "./RestaurantCards";
 import { useState, useEffect } from "react";
 import Shimmer from "./Shimmer";
+import { Link } from "react-router";
+import { RES_API } from "../utils/constant";
 const Body = () => {
-    const [restaurantList, setRestaurantList] = useState([])
+    const [restaurantList, setRestaurantList] = useState([]);
     const [searchText, setSearchText] = useState('');
     const [filterRestaurant, setFilterRestaurant] = useState([]);
 
@@ -13,7 +15,7 @@ const Body = () => {
     }, []);
 
     const fetchData = async () => {
-        const data = await fetch('https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9351929&lng=77.624480699999999&page_type=DESKTOP_WEB_LISTING');
+        const data = await fetch(RES_API);
 
         const json = await data.json();
         console.log(json);
@@ -69,7 +71,7 @@ const Body = () => {
                     >Top Rated Restaurant</button>
                 </div>
                 <div className="restaurant-container">
-                    {filterRestaurant.map((restaurant, index) => <RestaurantCards key={index} resData={restaurant} />)}
+                    {filterRestaurant.map((restaurant, index) => <Link key={restaurant.info.id}   to={`restaurants/${restaurant.info.id}`}><RestaurantCards resData={restaurant} /></Link> )}
                 </div>
             </section>
         </main>
