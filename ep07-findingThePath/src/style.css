@@ -354,3 +354,19 @@ body {
 .border-bottom{
   border-bottom: 1px solid #d4d4d4;
 }
+
+
+/* RestaurantMEnu SHimmer */
+
+
+.menu-shimmer-container{
+  padding: 1.6rem;
+}
+.menu-shimmer-card{
+  margin-top: 6rem;
+  width: 100%;
+  background-color: lightgray;
+  height: 10rem;
+  width: 100%;
+  border-radius: 1rem;
+}

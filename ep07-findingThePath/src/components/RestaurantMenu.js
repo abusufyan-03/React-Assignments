@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { RES_MENU_API } from "../utils/constant";
+import RestaurantMenuShimmer from "./RestaurantMenuShimmer";
 import { useParams } from "react-router";
 import { CDN_SMALL } from "../utils/constant";
 const RestaurantMenu = () => {
@@ -38,7 +39,7 @@ const RestaurantMenu = () => {
             console.error("Error", error)
         }
     }
-    return(
+    return resInfo.length===0? <RestaurantMenuShimmer/>: (
 
         <>
             <div className="menu-card">
