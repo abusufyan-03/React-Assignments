@@ -1,61 +1,78 @@
-@media(min-width: 768px){
-    .header{
-        padding: 0 2.4rem;
-    }
-    .main{
+@media(min-width: 768px) {
+    .header {
         padding: 0 2.4rem;
     }
 
-    .search-container{
+    .main {
+        padding: 0 2.4rem;
+    }
+
+    .search-container {
         margin: 2.4rem 0;
     }
-    .restaurant-container{
+
+    .restaurant-container {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         gap: 2.4rem;
     }
+
+    .categoroy-section {
+        width: 44rem;
+        margin: 0 auto;
+    }
 }
 
 @media (min-width: 1024px) {
-    .header{
+    .header {
         display: flex;
         padding: 0 3.2rem;
     }
-    .toggle-menu{
+
+    .toggle-menu {
         display: none;
     }
-    .nav-container{
+
+    .nav-container {
         display: block;
     }
-    .nav-items{
+
+    .nav-items {
         display: flex;
         gap: 3.2rem;
     }
-    .nav-buttons{
+
+    .nav-buttons {
         display: flex;
         gap: .8rem;
     }
-     .nav-items li:hover {
+
+    .nav-items li:hover {
         color: #ff6b00;
         cursor: pointer;
     }
-    
-    .main{
+
+    .main {
         padding: 0 3.2rem;
     }
 
-    .search-container{
+    .search-container {
         margin: 3.2rem 0;
     }
 
-    .restaurant-container{
+    .restaurant-container {
         grid-template-columns: repeat(3, 1fr);
         gap: 3.2rem;
     }
+
+    .categoroy-section {
+        width: 84rem;
+        margin: 0 auto;
+    }
 }
 
-@media (width >= 1280) {
-    .restaurant-container{
+@media (width >=1280) {
+    .restaurant-container {
         grid-template-columns: repeat(4, 1fr);
         gap: 3.2rem;
     }

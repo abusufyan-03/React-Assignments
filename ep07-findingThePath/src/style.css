@@ -224,3 +224,133 @@ body {
     margin: 1.6rem;
     border-radius: 1rem;
 }
+
+/* Restaurant Menu */
+
+.categoroy-section{
+   width: 100%;
+  /* margin: 0 auto; */
+  margin-bottom: 1.6rem;
+}
+.menu-card{
+  padding: 1.6rem;
+ 
+}
+
+.category-header{
+  display: flex;
+  cursor: pointer;
+  padding: 1.6rem;
+  border-radius: 1rem;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.1);
+  justify-content: space-between;
+  border: 1px solid #d4d4d4;
+  margin-bottom: 1.6rem;
+}
+
+.category-header.active{
+  border-bottom: none;
+  background-color: #F9FAFB;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  box-shadow: none;
+}
+.item-title{
+ font-size: 1.8rem;
+ font-weight: 700;
+ overflow: hidden;
+ white-space: nowrap;
+ text-overflow: ellipsis;
+    
+}
+
+
+.item-list{
+  display: none;
+  /* border: 1px solid #d4d4d4; */
+  border: 1px solid #d4d4d4;
+  border-top: none;
+  border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+  /* margin-top: 1.6rem; */
+  padding: 1.6rem;
+  margin-bottom: 1.6rem;
+}
+
+
+.item-list.active{
+  display: block;
+}
+
+.item-card{
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid black;
+  padding: 1.6rem 0;
+}
+
+
+.item-image-container{
+  position: relative;
+  width: 12.8rem;
+  height: 12.8rem;
+  display: inline-block;
+}
+
+.add-btn{
+  position: absolute;
+  bottom: 0.8rem;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 0.6rem 1.2rem;
+  background-color: white;
+  border: none;
+  color: green;
+  border-radius: 0.6rem;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 1.4rem;
+  z-index: 10;
+}
+
+.add-btn:hover {
+  background-color: whitesmoke;
+}
+
+.item-image{
+  width: 100%;
+  height: 100%;
+  border-radius: 1rem;
+  object-fit: cover;
+  display: block;
+}
+
+.item-info{
+  width: 50%;
+  /* padding: 1.6rem; */
+}
+.name-price{
+  display: flex;
+  padding-right: 1.6rem;
+}
+.item-name{
+  margin-bottom: .8rem;
+  font-size: 1.6rem;
+  font-weight: 600;
+  padding-right: 1rem;
+}
+
+.item-price{
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
+.item-description{
+  font-size: 1.4rem;
+}
+
+
+
+.border-bottom{
+  border-bottom: 1px solid #d4d4d4;
+}
