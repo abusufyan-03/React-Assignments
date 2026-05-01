@@ -7,6 +7,8 @@ class About extends React.Component{
         <>
         <h1>About US Page</h1>
         <p>This is about us page</p>
+        <UserClass name={"First"} />
+        <UserClass name={"Second"} />
         </>
     )
     }
