@@ -1,46 +1,25 @@
-import { useState, useEffect } from "react";
-import { RES_MENU_API } from "../utils/constant";
 import RestaurantMenuShimmer from "./RestaurantMenuShimmer";
 import { useParams } from "react-router";
 import { CDN_SMALL } from "../utils/constant";
+import useRestaurantMenuData from "../utils/useRestaurantMenuData"
+import { useState } from "react";
 const RestaurantMenu = () => {
-    const [resInfo, setResInfo] = useState([]);
     const [openResInfo, setOpenResInfo] = useState({});
 
-    const redId = useParams();
-    console.log(redId)
+    const resId = useParams();
+    // console.log(resId)
     const toggleCategories = (catIndex)=>{
         setOpenResInfo((prev)=>({
             ...prev,
             [catIndex]: !prev[catIndex]
         }))
     }
-    useEffect(() => {
-        fetchResMenuData();
-    }, [])
-    const fetchResMenuData = async () => {
-        // const data = await fetch(`${RES_MENU_API + 774091}`)
+    
+    const resInfo = useRestaurantMenuData(resId);
+    // console.log("resInfo", resInfo)
 
-        try {
-            const data = await fetch(RES_MENU_API + redId.id);
-            console.log('Status', data.status);
-            console.log('Headers:', data.headers);
-            const json = await data.json();
-            console.log('Json Response', json)
 
-            if (!json) {
-                console.error('Empty Response recieved')
-                return;
-            }
-            console.log(json)
-            setResInfo(json.data.cards[4].groupedCard.cardGroupMap.REGULAR.cards[5].card.card.categories)
-            // console.log("ResInfo:", resInfo)
-        } catch (error) {
-            console.error("Error", error)
-        }
-    }
     return resInfo.length===0? <RestaurantMenuShimmer/>: (
-
         <>
             <div className="menu-card">
 
