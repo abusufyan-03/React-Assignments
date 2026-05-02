@@ -5,10 +5,13 @@ import { useState } from 'react';
 import '../style.css';
 import '../responsiveness.css'
 import { Link } from 'react-router';
+import useOnlineStatus from '../utils/useOnlineStatus';
 const Header = () => {
     const [openMenu, setOpenMenu] = useState(false)
     const [login, setLogin] = useState('login');
-    console.log("Header componenent rendered!!")
+    // console.log("Header componenent rendered!!")
+
+    const onlineStatus = useOnlineStatus();
     return(
         <header className="header">
             <div className="logo-container">
@@ -46,6 +49,7 @@ const Header = () => {
 
             <div className='nav-container'>
                 <ul className='nav-items'>
+                    <li>Online: {onlineStatus? "🟢": "🔴"} </li>
                     <li><Link to='/'>Home</Link></li>
                     <li><Link to='/About'>About US</Link></li>
                     <li><Link to='/Contact'>Contact</Link></li>
