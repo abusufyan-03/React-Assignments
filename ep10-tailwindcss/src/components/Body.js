@@ -46,11 +46,11 @@ const Body = () => {
     if(onlineStatus == false) return <h1>Look like you're offline</h1>
 
     return restaurantList.length == 0 ? <Shimmer /> : (
-        <main className="main">
+        <main className="main p-4 md:p-6 lg:p-8">
             <section>
-                <div className="search-container">
+                <div className="search-container m-4">
                     <input
-                        className="search-bar"
+                        className="search-bar p-2 border rounded-lg mr-2"
                         id="search"
                         onChange={(e) => {
                             setSearchText(e.target.value);
@@ -63,12 +63,12 @@ const Body = () => {
                         }}
                         type="text"
                         placeholder="search..." />
-                    <button className="search-btn btn"
+                    <button className="search-btn btn border p-2 rounded-lg mr-2"
                     onClick={()=>{
                         handleSearch();
                     }}
                     >Search</button>
-                    <button className="filter-btn btn"
+                    <button className="filter-btn btn border p-2 rounded-lg mt-2"
                         onClick={() => {
                             const filterRestaurant = restaurantList.filter((res) => res.info.avgRating > 4.5)
                             setFilterRestaurant(filterRestaurant);
@@ -76,7 +76,7 @@ const Body = () => {
 
                     >Top Rated Restaurant</button>
                 </div>
-                <div className="restaurant-container">
+                <div className="restaurant-container grid grid-cols-1 gap-4 md:grid-cols-3 md:gap-6 lg:grid-cols-4 lg:gap-8">
                     {filterRestaurant.map((restaurant, index) => <Link key={restaurant.info.id}   to={`restaurants/${restaurant.info.id}`}><RestaurantCards resData={restaurant} /></Link> )}
                 </div>
             </section>
