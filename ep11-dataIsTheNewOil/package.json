@@ -1,0 +1,17 @@
+{
+  "dependencies": {
+    "parcel": "^2.16.4",
+    "react": "^19.2.5",
+    "react-dom": "^19.2.5",
+    "react-router": "^7.14.2"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "clean": "rm -rf .parcel-cache dist",
+    "dev": "npm run clean && parcel src/index.html",
+    "start": "npx parcel src/index.html"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4.2.4"
+  }
+}
