@@ -24,7 +24,11 @@ const useRestaurantMenuData = (resId) =>{
                 return;
             }
             // console.log(json)
-            setResInfo(json.data.cards[4].groupedCard.cardGroupMap.REGULAR.cards[5].card.card.categories)
+            let resInfo = json.data.cards[4].groupedCard.cardGroupMap.REGULAR.cards.flatMap((cat)=>cat.card.card.categories || []);
+            // console.log(resInfo)
+            setResInfo(resInfo)
+
+            
         } catch (error) {
             console.error("Error", error)
         }

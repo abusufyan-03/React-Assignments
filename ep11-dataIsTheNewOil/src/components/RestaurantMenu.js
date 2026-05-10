@@ -3,17 +3,18 @@ import { useParams } from "react-router";
 import { CDN_SMALL } from "../utils/constant";
 import useRestaurantMenuData from "../utils/useRestaurantMenuData"
 import { useState } from "react";
+import RestaurantCategory from "./RestaurantCategory";
 const RestaurantMenu = () => {
-    const [openResInfo, setOpenResInfo] = useState({});
+    const [showItemIndex, setShowItemIndex] = useState(null);
 
     const resId = useParams();
     // console.log(resId)
-    const toggleCategories = (catIndex) => {
-        setOpenResInfo((prev) => ({
-            ...prev,
-            [catIndex]: !prev[catIndex]
-        }))
-    }
+    // const toggleCategories = (catIndex) => {
+    //     setOpenResInfo((prev) => ({
+    //         ...prev,
+    //         [catIndex]: !prev[catIndex]
+    //     }))
+    // }
 
     const resInfo = useRestaurantMenuData(resId);
     // console.log("resInfo", resInfo)
@@ -23,7 +24,7 @@ const RestaurantMenu = () => {
         <>
             <div className="menu-card">
 
-                {resInfo.map((categories, catIndex) => (
+                {/* {resInfo.map((categories, catIndex) => (
                     <div className="categoroy-section p-4 mx-auto md:w-lg lg:w-210 " key={catIndex}>
                         <div className={`category-header cursor-pointer p-4 bg-slate100 flex justify-between border rounded-lg ${openResInfo[catIndex] ? "bg-slate-200 border-b-0 rounded-b-none" : ''}`} onClick={() => toggleCategories(catIndex)}>
                             <h2 className={`item-title ${openResInfo[catIndex] ? "active" : ''} `}>{categories.title} </h2><span className="open-icon">{openResInfo[catIndex] ? "▲" : "▼"}</span>
@@ -53,6 +54,16 @@ const RestaurantMenu = () => {
 
                         </div>
                     </div>
+                ))} */}
+                {resInfo.map((categories, catIndex)=>(
+                    <RestaurantCategory 
+                    key={catIndex} 
+                    showItem={catIndex === showItemIndex}
+                    categoryIndex= {catIndex}
+                    setShowItemIndex={setShowItemIndex}
+                    category={categories}
+
+                    />
                 ))}
             </div>
         </>
