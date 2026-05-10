@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import ReactDOM from 'react-dom/client';
 const logo = new URL('../assets/logo.png', import.meta.url);
 import { useState } from 'react';
@@ -7,12 +7,15 @@ import { useState } from 'react';
 import "../index.css"
 import { Link } from 'react-router';
 import useOnlineStatus from '../utils/useOnlineStatus';
+import UserContext from '../utils/UserContext.js';
 const Header = () => {
     const [openMenu, setOpenMenu] = useState(false)
     const [login, setLogin] = useState('login');
     // console.log("Header componenent rendered!!")
 
     const onlineStatus = useOnlineStatus();
+
+    const {loggedInUser} = useContext(UserContext)
     return(
         <header className="header h-16 bg-amber-50 border flex justify-between items-center px-4 lg:px-8">
             <div className="logo-container">
@@ -65,6 +68,9 @@ const Header = () => {
                 }}
                 >{login}</button>
                 {/* <button className='signin-btn btn'>Signin</button> */}
+
+                {/* React Context */}
+                <span>{loggedInUser}</span>
             </div>
         </header>
     )

@@ -1,10 +1,11 @@
 import resList from "../utils/resList";
 import RestaurantCards from "./RestaurantCards";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback, useContext } from "react";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router";
 import { RES_API } from "../utils/constant";
 import useOnlineStatus from "../utils/useOnlineStatus";
+import UserContext from "../utils/UserContext.js";
 const Body = () => {
     const [restaurantList, setRestaurantList] = useState([]);
     const [searchText, setSearchText] = useState('');
@@ -45,6 +46,8 @@ const Body = () => {
 
     if(onlineStatus == false) return <h1>Look like you're offline</h1>
 
+    const {loggedInUser, setUserName} = useContext(UserContext)
+
     return restaurantList.length == 0 ? <Shimmer /> : (
         <main className="main p-4 md:p-6 lg:p-8">
             <section>
@@ -75,6 +78,13 @@ const Body = () => {
                         }}
 
                     >Top Rated Restaurant</button>
+
+                    {/* react context */}
+                    <input className=" p-2 border rounded-lg ml-2" 
+                    placeholder="React Context-example"
+                    onChange={(e)=>setUserName(e.target.value)}
+                    
+                    />
                 </div>
                 <div className="restaurant-container grid grid-cols-1 gap-4 md:grid-cols-3 md:gap-6 lg:grid-cols-4 lg:gap-8">
                     {filterRestaurant.map((restaurant, index) => <Link key={restaurant.info.id}   to={`restaurants/${restaurant.info.id}`}><RestaurantCards resData={restaurant} /></Link> )}
