@@ -3,7 +3,7 @@ import { CDN_SMALL } from "../utils/constant";
 import { useDispatch } from "react-redux";
 import { addItem } from "../utils/cartSlice";
 const ItemList = ({ itemIndex, item }) => {
-    console.log(item)
+
 
     const disPatch = useDispatch();
 

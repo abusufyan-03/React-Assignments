@@ -62,7 +62,7 @@ const Header = () => {
                     <li className='hover:text-orange-500'><Link to='/About'>About US</Link></li>
                     <li className='hover:text-orange-500'><Link to='/Contact'>Contact</Link></li>
                     <li className='hover:text-orange-500'><Link to='/Grocery'>Grocery</Link></li>
-                    <li className='hover:text-orange-500'>Cart({ cartItems.length } - items)</li>
+                    <li className='hover:text-orange-500'><Link to={"/cart"}>Cart({ cartItems.length } - items)</Link></li>
                 </ul>
             </div>
             <div className='nav-buttons hidden md:block'>
