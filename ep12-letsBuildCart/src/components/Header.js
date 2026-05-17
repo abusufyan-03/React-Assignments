@@ -8,6 +8,7 @@ import "../index.css"
 import { Link } from 'react-router';
 import useOnlineStatus from '../utils/useOnlineStatus';
 import UserContext from '../utils/UserContext.js';
+import { useSelector } from 'react-redux';
 const Header = () => {
     const [openMenu, setOpenMenu] = useState(false)
     const [login, setLogin] = useState('login');
@@ -16,6 +17,9 @@ const Header = () => {
     const onlineStatus = useOnlineStatus();
 
     const {loggedInUser} = useContext(UserContext)
+
+    const cartItems = useSelector((store)=> store.cart.items)
+    console.log(cartItems);
     return(
         <header className="header h-16 bg-amber-50 border flex justify-between items-center px-4 lg:px-8">
             <div className="logo-container">
@@ -58,7 +62,7 @@ const Header = () => {
                     <li className='hover:text-orange-500'><Link to='/About'>About US</Link></li>
                     <li className='hover:text-orange-500'><Link to='/Contact'>Contact</Link></li>
                     <li className='hover:text-orange-500'><Link to='/Grocery'>Grocery</Link></li>
-                    <li className='hover:text-orange-500'>Cart</li>
+                    <li className='hover:text-orange-500'>Cart({ cartItems.length } - items)</li>
                 </ul>
             </div>
             <div className='nav-buttons hidden md:block'>
